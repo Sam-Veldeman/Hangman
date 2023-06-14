@@ -17,7 +17,7 @@ class Hangman:
     #recieve input from user, restrainted to 1 letter only.
     def play(self,letter):
         while True:
-            letter = input(f"Turn {self.turn_count}\nLooking for: {self.correctly_guessed_letters}\nPlease enter your letter:").upper()
+            letter = input(f"Turn {self.turn_count}\nLooking for: {self.correctly_guessed_letters}\n\nPlease enter your letter:").upper()
             if len(letter) != 1:
                 print("Please make sure to enter only 1 letter, please try again:")
             elif letter in self.wrongly_guessed_letters:
@@ -37,12 +37,7 @@ class Hangman:
             print(f"I'm sorry, this letter is not in the word to find...\nLives left: {self.lives}")
     #start the game
     def start_game(self):
-        print(self.word_to_find)
-        print(self.lives)
-        print(self.wrongly_guessed_letters)
-        print(self.correctly_guessed_letters)
-        print(self.error_count)
-        print("Hangman game")
+        print("Hangman game\n")
         while self.lives != 0 and "_" in self.correctly_guessed_letters:
             print(self.correctly_guessed_letters)
             self.play(self)

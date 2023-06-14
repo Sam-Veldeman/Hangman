@@ -39,7 +39,6 @@ class Hangman:
     def start_game(self):
         print("Hangman game\n")
         while self.lives != 0 and "_" in self.correctly_guessed_letters:
-            print(self.correctly_guessed_letters)
             self.play(self)
         if self.lives == 0:
             self.game_over()

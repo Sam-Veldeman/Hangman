@@ -5,18 +5,6 @@
 
 #Create class hangman
 import random
-def check_user_input(input):
-    try:
-        # Convert it into integer
-        val = int(input)
-        return True
-    except ValueError:
-        try:
-            # Convert it into float
-            val = float(input)
-            return True
-        except ValueError:
-            return False
 class Hangman:
     #declare all the attributes.
     def __init__(self):
@@ -35,7 +23,7 @@ class Hangman:
                 print("Please make sure to enter only 1 letter, please try again:")
             elif letter in self.wrongly_guessed_letters:
                 print("This letter was allready used. Please try again:")
-            elif check_user_input(letter) == True:
+            elif letter.isalpha() == False:
                 print("Only letters allowed! Try again.")
             else:
                 break

@@ -18,15 +18,15 @@ class Hangman:
     #recieve input from user, restrainted to 1 letter input and check for previous use of a letter.
     def play(self,letter): #declare method
         while True: #check input untill input = ok
-            letter = input(f"Turn {self.turn_count}\n{self.lives} lives left\nLooking for: {self.correctly_guessed_letters}\n\nPlease enter your letter:").upper()
+            letter = input(f"\nTurn {self.turn_count}:\n\n{self.lives} lives left\nLooking for: {self.correctly_guessed_letters}\n\nPlease enter your letter:").upper()
             if len(letter) != 1:
-                print("Please make sure to enter only 1 letter, please try again:")
+                print(f"\nPlease make sure to enter only 1 letter, please try again:")
             elif letter in self.wrongly_guessed_letters:
-                print("This letter was allready used. Please try again:")
+                print(f"\nThis letter was allready used. Please try again:")
             elif letter in self.correctly_guessed_letters:
-                print("This letter is correct, but allready used. Please try again:")
+                print(f"\nThis letter is correct, but allready used. Please try again:")
             elif letter.isalpha() == False:
-                print("Only letters allowed! Try again.")
+                print(f"\nOnly letters allowed! Try again.")
             else:
                 break
         if letter in self.word_to_find:
@@ -39,7 +39,7 @@ class Hangman:
             self.turn_count += 1
             self.lives -= 1
             self.wrongly_guessed_letters.append(letter)
-            print(f"I'm sorry, this letter is not in the word to find...\nLives left: {self.lives}")
+            print(f"\nI'm sorry, this letter is not in the word to find...")
     #start the game
     def start_game(self):
         print("Hangman game\n")

@@ -51,7 +51,7 @@ class Hangman:
             self.well_played()
     #end the game when word is not found.
     def game_over(self):
-        print("Word not found. Game over...")
+        print(f"Game over...\nThe word to find was: {self.word_to_find}")
     #end the game when word is found.
     def well_played(self):
         print(f"You found the word: {self.word_to_find} in {self.turn_count} turns with {self.error_count} errors!")

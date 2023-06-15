@@ -23,6 +23,8 @@ class Hangman:
                 print("Please make sure to enter only 1 letter, please try again:")
             elif letter in self.wrongly_guessed_letters:
                 print("This letter was allready used. Please try again:")
+            elif letter in self.correctly_guessed_letters:
+                print("This letter is correct, but allready used. Please try again:")
             elif letter.isalpha() == False:
                 print("Only letters allowed! Try again.")
             else:
